@@ -22,7 +22,8 @@
 	<span class="flex items-center gap-1.5 text-xs font-medium text-ink-muted">
 		{label}
 		{#if detected}
-			<span class="rounded-full bg-sunken px-1.5 py-0.5 text-[10px] text-ink-subtle">자동 감지</span>
+			<span class="rounded-full bg-sunken px-1.5 py-0.5 text-[10px] text-ink-subtle">자동 감지</span
+			>
 		{/if}
 	</span>
 	<div class="inline-flex rounded-control border border-hairline p-0.5">
@@ -31,9 +32,7 @@
 				type="button"
 				onclick={() => (value = option.value)}
 				class="rounded px-2.5 py-1 text-xs font-medium transition-colors
-				       {value === option.value
-					? 'bg-accent text-on-accent'
-					: 'text-ink-muted hover:text-ink'}"
+				       {value === option.value ? 'bg-accent text-on-accent' : 'text-ink-muted hover:text-ink'}"
 			>
 				{option.label}
 			</button>

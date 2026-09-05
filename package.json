@@ -9,9 +9,18 @@
 		"./theme.css": "./src/theme.css",
 		"./tool": "./src/tool.ts"
 	},
+	"scripts": {
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
+	},
 	"peerDependencies": {
 		"@lucide/svelte": "^1.17.0",
 		"svelte": "^5.55.2",
 		"tailwindcss": "^4.2.2"
+	},
+	"devDependencies": {
+		"prettier": "^3.8.1",
+		"prettier-plugin-svelte": "^3.5.1",
+		"svelte": "^5.55.2"
 	}
 }

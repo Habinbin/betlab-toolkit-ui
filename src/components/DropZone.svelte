@@ -46,8 +46,7 @@
 	}
 </script>
 
-<svelte:element
-	this="div"
+<div
 	role="presentation"
 	ondragover={(e: DragEvent) => {
 		e.preventDefault();
@@ -98,4 +97,4 @@
 			{#if children}{@render children()}{/if}
 		</button>
 	{/if}
-</svelte:element>
+</div>

@@ -60,9 +60,7 @@
 			}}
 			class="group relative flex flex-col overflow-hidden rounded-panel border bg-surface
 			       transition-all duration-200
-			       {overIndex === index && draggingIndex !== index
-				? 'border-accent'
-				: 'border-hairline'}
+			       {overIndex === index && draggingIndex !== index ? 'border-accent' : 'border-hairline'}
 			       {draggingIndex === index ? 'opacity-40' : ''}"
 		>
 			<div class="flex items-center justify-between border-b border-hairline px-2.5 py-1.5">
