@@ -1,0 +1,108 @@
+/**
+ * betlab toolbox 디자인 토큰 — Layer 1.
+ *
+ * 라이트/다크 값을 CSS 변수로 두고 `@theme inline` 으로 Tailwind에 연결한다.
+ * 그래서 툴은 `bg-surface` 하나만 쓰면 되고 `dark:` 변형을 쓸 일이 없다.
+ * 색을 두 번 적을 자리가 없으므로 분기할 자리도 없다.
+ */
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	/* 표면 */
+	--betlab-surface: #ffffff;
+	--betlab-elevated: #fafafa;
+	--betlab-sunken: #f4f4f5;
+
+	/* 경계 */
+	--betlab-hairline: #e4e4e7;
+	--betlab-hairline-strong: #d4d4d8;
+
+	/* 글자 */
+	--betlab-ink: #18181b;
+	--betlab-ink-muted: #71717a;
+	--betlab-ink-subtle: #a1a1aa;
+
+	/* 주 행동 — 배경과 반전된다 */
+	--betlab-accent: #09090b;
+	--betlab-accent-hover: #27272a;
+	--betlab-on-accent: #fafafa;
+
+	/* 의미색 */
+	--betlab-danger: #ef4444;
+	--betlab-success: #059669;
+	--betlab-warning: #b45309;
+
+	color-scheme: light;
+}
+
+.dark {
+	--betlab-surface: #09090b;
+	--betlab-elevated: #18181b;
+	--betlab-sunken: #27272a;
+
+	--betlab-hairline: #27272a;
+	--betlab-hairline-strong: #3f3f46;
+
+	--betlab-ink: #f4f4f5;
+	--betlab-ink-muted: #a1a1aa;
+	--betlab-ink-subtle: #71717a;
+
+	--betlab-accent: #fafafa;
+	--betlab-accent-hover: #e4e4e7;
+	--betlab-on-accent: #09090b;
+
+	--betlab-danger: #f87171;
+	--betlab-success: #34d399;
+	--betlab-warning: #fbbf24;
+
+	color-scheme: dark;
+}
+
+@theme inline {
+	--color-surface: var(--betlab-surface);
+	--color-elevated: var(--betlab-elevated);
+	--color-sunken: var(--betlab-sunken);
+
+	--color-hairline: var(--betlab-hairline);
+	--color-hairline-strong: var(--betlab-hairline-strong);
+
+	--color-ink: var(--betlab-ink);
+	--color-ink-muted: var(--betlab-ink-muted);
+	--color-ink-subtle: var(--betlab-ink-subtle);
+
+	--color-accent: var(--betlab-accent);
+	--color-accent-hover: var(--betlab-accent-hover);
+	--color-on-accent: var(--betlab-on-accent);
+
+	--color-danger: var(--betlab-danger);
+	--color-success: var(--betlab-success);
+	--color-warning: var(--betlab-warning);
+
+	--font-sans:
+		'Inter Variable', 'Noto Sans KR Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+		Roboto, sans-serif;
+	--font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+	/* 관측된 사용 빈도에 맞춘 라운딩 — 컨트롤은 lg, 패널은 2xl */
+	--radius-control: 0.5rem;
+	--radius-panel: 1rem;
+}
+
+html {
+	background-color: var(--betlab-surface);
+}
+
+body {
+	margin: 0;
+	background-color: var(--betlab-surface);
+	color: var(--betlab-ink);
+	font-family: var(--font-sans);
+	font-size: 14px;
+	line-height: 1.43;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

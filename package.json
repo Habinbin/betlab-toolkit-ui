@@ -1,0 +1,17 @@
+{
+	"name": "@betlab/toolkit-ui",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"description": "betlab toolbox 공유 디자인 토큰과 UI primitive (Layer 1-2)",
+	"exports": {
+		".": "./src/index.ts",
+		"./theme.css": "./src/theme.css",
+		"./tool": "./src/tool.ts"
+	},
+	"peerDependencies": {
+		"@lucide/svelte": "^1.17.0",
+		"svelte": "^5.55.2",
+		"tailwindcss": "^4.2.2"
+	}
+}
