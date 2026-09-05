@@ -20,24 +20,29 @@ git submodule add https://github.com/Habinbin/betlab-toolkit-ui packages/ui
 ```
 
 ```js
-// svelte.config.js
+// svelte.config.js — 패키지 이름 그대로 별칭을 건다.
+// 나중에 npm 배포로 옮겨도 툴의 import 문은 손대지 않아도 된다.
 kit: {
 	alias: {
-		$ui: 'packages/ui/src';
+		'@betlab/toolkit-ui': 'packages/ui/src/index.ts',
+		'@betlab/toolkit-ui/tool': 'packages/ui/src/tool.ts',
+		'@betlab/toolkit-ui/theme.css': 'packages/ui/src/theme.css'
 	}
 }
 ```
 
 ```css
-/* src/routes/layout.css — 앱 전역 CSS는 이 한 줄로 끝난다 */
-@import '@betlab/toolkit-ui/theme.css';
+/* src/routes/layout.css — 앱 전역 CSS는 이게 전부다 */
+@import '../../packages/ui/src/theme.css';
+@source '../../packages/ui/src';
 ```
 
 ```svelte
 <script>
-	import { ToolShell, DropZone, Button } from '$ui';
+	import { ToolShell, DropZone, Button } from '@betlab/toolkit-ui';
 </script>
 ```
+
 
 ## 토큰
 
