@@ -22,4 +22,16 @@ export interface ToolManifest {
 	 * 비어 있으면 브라우저에서 완결된다(기본). @client-first-processing 참조.
 	 */
 	serverRoutes?: string[];
+	/**
+	 * 툴박스가 이 툴을 어떻게 노출할지.
+	 *
+	 * - `'embed'` (기본) — 툴박스 안 라우트로 렌더한다. submodule 로 물어야 한다.
+	 * - `'link'` — 툴박스는 카드만 두고 {@link externalUrl} 로 보낸다.
+	 *   코드가 툴박스에 들어오지 않으므로 submodule 이 필요 없다.
+	 *
+	 * @see @standalone-tool-deployment
+	 */
+	surface?: 'embed' | 'link';
+	/** {@link surface} 가 `'link'` 일 때 카드가 가리킬 주소. */
+	externalUrl?: string;
 }
